@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --color-primary-01: #10214a;
+    --color-primary-02: #163a4a;
+    --color-primary-03: #d9bf71;
+    --color-primary-04: #172531;
+    --color-neutral-01: #faf5f5;
+}
+
+/* estilòos globais */
+body {
+    max-width: 1200px;
+    min-width: 390px;
+    height: 100%;
+}
+
+
+/* CABEÇALHO */
+header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary-04);
+    color: var(--color-primary-03);
+    padding: 15px 4%;
+    box-shadow: 2px 4px 101px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 15px 15px;
+}
+
+.btn-mobile {
+    background: none;
+    border: none;
+    color: var(--color-primary-03);
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    background-color: var(--color-primary-04);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    left: 0;
+    padding: 1rem;
+    z-index: 3;
+    transform: translateY(-100%);
+}
+
+.open {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+    padding-top: 2.5rem;
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    transform: translateY(0%);
+    transition: 0.3s ease-in cubic-bezier(0.34,-0.11, 0.77, 1.23);
+}
+
+li {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: var(--color-primary-03);
+    transition: all 0.3s ease-in-out;
+}
+a:hover {
+    background-color: var(--color-primary-03);
+    color: var(--color-primary-04);
+    padding: 0.4rem 0.7rem;
+    border-radius: 10px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+}
+.logo img {
+    width: 60px;
+    height: auto;
+}
