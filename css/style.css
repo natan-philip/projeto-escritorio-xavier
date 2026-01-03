@@ -16,6 +16,10 @@
 }
 
 /* estilos globais */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #172531e6;
     min-width: 390px;
@@ -33,6 +37,10 @@ p {
     font-size: 1rem;
 }
 
+.flex {
+    display: flex;
+}
+
 /* CABEÇALHO */
 header{
     width: 100%;
@@ -44,7 +52,6 @@ header{
 }
 .header {
     width: 100%;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -53,6 +60,7 @@ header{
     padding: 15px 4%;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
     border-radius: 0 0 15px 15px;
+    
 }
 
 i {
@@ -68,11 +76,10 @@ i {
 }
 
 .navbar {
-    display: flex;
     flex-direction: column;
 }
 
-ul {
+.nav-menu {
     background-color: var(--color-primary-04);
     list-style: none;
     display: none;
@@ -84,17 +91,19 @@ ul {
     top: 80px;
     left: 0;
     padding: 1rem;
+    padding-top: 100px;
     z-index: 9999;
 }
 
 .open {
     position: absolute;
-    top: 90px;
+    z-index: auto;
+    top: 60px;
     left: 0;
     padding-top: 2.5rem;
     display: flex;
     border-radius: 0 0 15px 15px;
-    box-shadow: 0px 4px 10px rgba(12, 12, 12, 0.70);
+    box-shadow: 0px 14px 15px rgba(12, 12, 12, 0.50);
     animation: menu-open 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
@@ -109,23 +118,24 @@ ul {
   }
 }
 
-li {
+.menu-item {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
     cursor: pointer;
 }
-li:hover {
+.menu-item:hover {
     background-color: var(--color-primary-03);
     color: var(--color-primary-04);
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
-    height: 40px;
-    transition: all 0.5s ease-in-out;
+    padding: 07px 20px;
+    transition: background-color 0.4s ease-in;
 
     & a {
         color: var(--color-primary-04);
@@ -138,7 +148,6 @@ a {
 }
 
 .logo {
-    display: flex;
     align-items: center;
     gap: 0.5rem;
     z-index: 2;
@@ -151,27 +160,28 @@ a {
 
 /* HERO */
 .hero {
+    position: relative;
+    top: 80px;
+    z-index: 1;
     width: 100%;
-    height: 800px;
+    height: 720px;
     background-color: var(--color-primary-04);
-    display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    padding: 150px 4% 60px 4%;
+    gap: 50px;
+    padding: 25px 4% 40px 4%;
     border-radius: 0 0 30px 30px;
 }
 .hero-conteudo {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 h1.titulo {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     line-height: 1.9rem;
     color: var(--color-primary-03);
     text-align: center;
@@ -180,17 +190,16 @@ h1.titulo {
 p.sub-titulo {
     font-size: 1rem;
     font-weight: 500;
-    width: 360px;
+    width: 100%;
     color: var(--color-neutral-01);
     text-align: center;
     line-height: 1.5rem;
 }
 
 .btn-hero {
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
     background-color: var(--color-primary-03);
     color: var(--color-primary-04);
     border: none;
@@ -200,22 +209,143 @@ p.sub-titulo {
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+
+    &:hover {
+        filter: brightness(0.8);
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    }
 }
 
-.imgagem-hero {
-    display: flex;
+.imagem-hero {
     align-items: center;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 35px;
 }
 
 .image-escritorio {
-    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 0 3%;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+/* SOBRE O ESCRITORIO */
+
+.sobre {
+    position: relative;
+    top: -10px;
+    z-index: 0;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 0 3%;
+    background-color: var(--color-primary-03);
+    padding: 80px 4% 60px 4%;
+}
+.titulo-secao {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-primary-04);
+    margin: 40px 0;
+    text-align: center;
 }
 
-/* SOBRE O ESCRITORIO */
+.sobre-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.sobre-imagem {
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    min-width: 360px;
+    min-height: 283px;
+    overflow: hidden;
+    width: 100%;
+    height: 283px;
+    background-image: url("../img/escritorio-sobre.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 68px 0 68px 22px;
+}
+
+.sobre-conteudo {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.sobre-titulo h2 {
+    font-size: 1.7rem;
+    line-height: 30px;
+    width: 360px;
+    color: var(--color-primary-04);
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.descricao-sobre {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-primary-04);
+    gap: 15px;
+}
+.qualidades {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.itens {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--color-primary-02);
+    border-radius: 30px;
+    color: var(--color-neutral-01);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    gap: 15px;
+
+    & i {
+        font-size: 1.2rem;
+    }
+}
+
+.btn-sobre {
+    background-color: transparent;
+    border: 2px solid var(--color-primary-04);
+    padding: 0.8rem 2rem;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: var(--color-primary-04);
+
+    &:hover {
+        background-color: var(--color-primary-02);
+        color: #faf5f5;
+        filter: brightness(0.8);
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    }
+}

@@ -9,34 +9,59 @@
 </head>
 <body>
     <header>
-            <section class="header">
-                <div class="logo">
+            <section class="header flex">
+                <div class="logo flex">
                     <img src="./img/logo-simples.webp" alt="Logo Escritorio Xavier">
                 </div>
-                <nav class="navbar">
+                <nav class="navbar flex">
                     <button class="btn-mobile">
-                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-bars menu"></i>
                     </button>
-                    <ul id="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Equipe</a></li>
-                        <li><a href="#">Serviços</a></li>
-                        <li><a href="#">Contato</a></li>
+                    <ul id="nav-links" class="nav-menu">
+                        <li class="menu-item"><a href="#">Home</a></li>
+                        <li class="menu-item"><a href="#">Sobre</a></li>
+                        <li class="menu-item"><a href="#">Equipe</a></li>
+                        <li class="menu-item"><a href="#">Serviços</a></li>
+                        <li class="menu-item"><a href="#">Contato</a></li>
                     </ul>
                 </nav>
             </section>
     </header>
     <main class="container">
-        <section class="hero">
-            <div class="hero-conteudo">
+        <section class="hero flex">
+            <div class="hero-conteudo flex">
                 <h1 class="titulo">Escritório Xavier & Montalban Advocacia</h1>
-                <p class="sub-titulo">transformamos problemas jurídicos complexos em soluções seguras. Seja em causas trabalhistas, cíveis ou familiares, nossa missão é proteger o que é importante para você.</p>
-                <button href="#" class="btn-hero">Agendar Consulta Jurídica <i class="fa-brands fa-whatsapp"></i></button>
+                <p class="sub-titulo">Transformamos problemas jurídicos complexos em soluções seguras. Seja em causas trabalhistas, cíveis ou familiares, nossa missão é proteger o que é importante para você.</p>
+                <a href="#" class="btn-hero flex">Agendar Consulta Jurídica <i class="fa-brands fa-whatsapp"></i></a>
             </div>
-            <div class="imagem-hero">
-                <img class="image-escritorio" src="./img/image-escritorio.png" alt="Imagem do Escritorio Xavier">
+            <div class="imagem-hero flex">
+                <img class="image-escritorio flex" src="./img/image-escritorio.png" alt="Imagem do Escritorio Xavier">
             </div>
+        </section>
+        <section class="sobre flex">
+            <div class="titulo-secao">
+                <h2>Sobre o Escritório</h2>
+            </div>
+            <div class="sobre-container flex">
+                <div class="sobre-imagem flex"></div>
+                <div class="sobre-conteudo flex">
+                    <h3 class="sobre-titulo">O Escritório Xavier & Montalban Advocacia</h3>
+                    <div class="descricao-sobre">
+                        <p>Nasce com o propósito de oferecer uma advocacia ética, eficiente e acessível, focada em resultados e na tranquilidade de seus clientes.</p>
+                        <p>Atuamos de forma estratégica, analisando cada caso de maneira individualizada, sempre buscando a melhor solução jurídica — seja por meio de acordos inteligentes ou da atuação firme no contencioso.</p>
+                        <p>Nosso compromisso vai além do processo: defendemos pessoas, patrimônios e direitos com responsabilidade e dedicação.</p>
+                        <p>Nossa estrutura foi desenhada para oferecer um suporte jurídico completo, priorizando a agilidade e a transparência em cada etapa do processo. Mais do que advogados, somos parceiros dos nossos clientes na busca pela justiça e pela preservação de seus patrimônios e direitos.</p>
+                    </div>
+                    <div class="check-qualidade flex">
+                        <ul class="qualidades">
+                            <li class="itens"><i class="fa-solid fa-check"></i> Atendimento claro e objetivo</li>
+                            <li class="itens"><i class="fa-solid fa-check"></i> Comunicação transparente</li>
+                            <li class="itens"><i class="fa-solid fa-check"></i> Estratégia jurídica personalizada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn-sobre flex">Falar com Especialista <i class="fa-brands fa-whatsapp"></i></a>
         </section>
     </main>
 <script src="./javascript/script.js"></script>
