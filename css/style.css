@@ -39,6 +39,10 @@ p {
     font-weight: 500;
 }
 
+li {
+    list-style: none;
+}
+
 .flex {
     display: flex;
 }
@@ -448,7 +452,7 @@ p.sub-titulo {
     & i {
         font-size: 2.5rem;
         color: var(--color-neutral-01);
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
     }
 }
 
@@ -494,7 +498,7 @@ p.sub-titulo {
 
 .contato-info {
     flex-direction: column;
-    padding: 0 5%;
+    padding: 0 5px;
     gap: 40px;
 }
 
@@ -514,6 +518,12 @@ p.sub-titulo {
     border-radius: 20px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
     gap: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.20);
+    }
 }
 .card-contato i {
     font-size: 2.5rem;
@@ -523,22 +533,23 @@ p.sub-titulo {
     flex-direction: column;
     gap: 7px;
 }
+
+.form-contato {
+        border: 2px solid #d9bf716d;
+        border-radius: 20px;
+        padding:5% 10px 15px 10px;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        text-align: center;
+        color: var(--color-primary-03);
+        margin: 15px 0 25px 0;
+}
+
 form {
     flex-direction: column;
     margin-top: 50px;
-    padding:5% 10px 15px 10px;
-    border-radius: 20px;
-    border: 2px solid var(--color-primary-03);
     gap: 10px;
-}
-
-form p {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    font-weight: 700;
-    text-align: center;
-    color: var(--color-primary-03);
-    margin: 15px 0 25px 0;
 }
 
 input {
@@ -598,4 +609,65 @@ textarea {
         transform: translateY(-3px);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     }
+}
+
+/* SECAO FOOTER */
+
+.footer {
+    background-color: var(--color-primary-02);
+    padding: 40px 4% 60px 4%;
+    width: 100%;
+    height: auto;
+}
+
+.footer-conteudo {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    color: var(--color-neutral-01);
+    margin-top: 30px;
+}
+
+.footer-info {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: 320px;
+}
+.footer-info strong, a {
+    color: var(--color-primary-03);
+    font-weight: 700;
+}
+
+.footer-copy {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    color: var(--color-neutral-01);
+    margin-top: 30px;
+    border-top: 2px solid var(--color-primary-03);
+    padding-top: 20px;
+    width: 100%;
+    
+}
+
+.footer-copy a {
+    color: var(--color-neutral-01);
+    font-weight: 700;
 }
