@@ -8,13 +8,14 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/icon/favicon.ico" type="image/x-icon">
     <title>Escritório Xavier & Montalban Advocacia</title>
 </head>
 
 <body>
     <header>
-        <section class="header flex">
-            <div class="logo flex">
+        <div class="header flex">
+            <div class="logo">
                 <img src="./img/logo-simples.webp" alt="Logo Escritorio Xavier">
             </div>
             <nav class="navbar flex">
@@ -22,33 +23,34 @@
                     <i class="fa-solid fa-bars menu"></i>
                 </button>
                 <ul id="nav-links" class="nav-menu">
-                    <li class="menu-item"><a href="#">Home</a></li>
-                    <li class="menu-item"><a href="#">Sobre</a></li>
-                    <li class="menu-item"><a href="#">Equipe</a></li>
-                    <li class="menu-item"><a href="#">Serviços</a></li>
-                    <li class="menu-item"><a href="#">Contato</a></li>
+                    <li class="menu-item"><a href="#hero">Home</a></li>
+                    <li class="menu-item"><a href="#sobre">Sobre</a></li>
+                    <li class="menu-item"><a href="#equipe">Equipe</a></li>
+                    <li class="menu-item"><a href="#atuacoes">Áreas de Atuação</a></li>
+                    <li class="menu-item"><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
     </header>
     <main class="container">
-        <section class="hero flex">
-            <div class="hero-conteudo flex">
-                <h1 class="titulo">Escritório Xavier & Montalban Advocacia</h1>
-                <p class="sub-titulo">Transformamos problemas jurídicos complexos em soluções seguras. Seja em causas
-                    trabalhistas, cíveis ou familiares, nossa missão é proteger o que é importante para você.</p>
-                <a href="#" class="btn flex">Agendar Consulta Jurídica <i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-            <div class="imagem-hero flex">
-                <img class="image-escritorio flex" src="./img/image-escritorio.png" alt="Imagem do Escritorio Xavier">
+        <section class="hero" id="hero">
+            <div class="hero-container flex">
+                <div class="hero-conteudo flex">
+                    <h1 class="titulo">Escritório Xavier & Montalban Advocacia</h1>
+                    <p class="sub-titulo">Transformamos problemas jurídicos complexos em soluções seguras. Seja em
+                        causas
+                        trabalhistas, cíveis ou familiares, nossa missão é proteger o que é importante para você.</p>
+                    <a href="#" class="btn flex">Agendar Consulta Jurídica <i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                    <img class="image-escritorio" src="./img/image-escritorio.png" alt="Imagem do Escritorio Xavier">
             </div>
         </section>
-        <section class="sobre flex">
+        <section class="sobre flex" id="sobre">
             <div class="titulo-secao">
                 <h2 class="titulo-sobre">Sobre o Escritório</h2>
             </div>
             <div class="sobre-container flex">
-                <div class="sobre-imagem flex"></div>
+                <img class="sobre-imagem" src="./img/escritorio-sobre.png" alt="imagem do escritorio">
                 <div class="sobre-conteudo flex">
                     <h3 class="sobre-titulo">O Escritório Xavier & Montalban Advocacia</h3>
                     <div class="descricao-sobre">
@@ -74,26 +76,30 @@
                 </div>
             </div>
         </section>
-        <section class="equipe flex">
+        <section class="equipe flex" id="equipe">
             <div class="titulo-secao">
                 <h2 class="titulo-equipe">Nossos Especialistas</h2>
             </div>
             <div class="equipe-container flex">
-                <img src="./img/adv-01.png" alt="advogado do Escritorio Xavier" class="adv-01">
-                <img src="./img/adv-02.png" alt="advogada do Escritorio Xavier" class="adv-02">
-            </div>
-            <div class="equipe-conteudo flex">
-                <h3>Especialistas dedicados à sua causa.</h3>
-                <p>Contamos com uma equipe de advogados qualificados, atualizados com a legislação vigente e preparados
-                    para atuar com excelência nas mais diversas demandas jurídicas.</p>
-                <p>Cada profissional do <strong>Xavier & Montalban Advocacia</strong> une conhecimento técnico,
-                    experiência prática e sensibilidade humana para lidar com situações que exigem não apenas domínio
-                    jurídico, mas também empatia e responsabilidade.</p>
-                <p><strong>Aqui, o seu caso é tratado com seriedade, respeito e atenção total.</strong></p>
+                <div class="equipe-imagem flex">
+                    <img src="./img/adv-01.png" alt="advogado do Escritorio Xavier" class="adv-01">
+                    <img src="./img/adv-02.png" alt="advogada do Escritorio Xavier" class="adv-02">
+                </div>
+                <div class="equipe-conteudo flex">
+                    <h3>Especialistas dedicados à sua causa.</h3>
+                    <p>Contamos com uma equipe de advogados qualificados, atualizados com a legislação vigente e
+                        preparados
+                        para atuar com excelência nas mais diversas demandas jurídicas.</p>
+                    <p>Cada profissional do <strong>Xavier & Montalban Advocacia</strong> une conhecimento técnico,
+                        experiência prática e sensibilidade humana para lidar com situações que exigem não apenas
+                        domínio
+                        jurídico, mas também empatia e responsabilidade.</p>
+                    <p><strong>Aqui, o seu caso é tratado com seriedade, respeito e atenção total.</strong></p>
+                </div>
             </div>
             <a href="#" class="btn flex">Falar com Especialista <i class="fa-brands fa-whatsapp"></i></a>
         </section>
-        <section class="atuacoes flex">
+        <section class="atuacoes flex" id="atuacoes">
             <div class="titulo-secao">
                 <h2>Áreas de Atuação</h2>
             </div>
@@ -140,7 +146,7 @@
                 </div>
                 <div class="card flex">
                     <i class="fa-solid fa-id-card"></i>
-                    <h3 class="titulo-card">Recursos de Multas e Processos Administrativos do Detran</h3>
+                    <h3 class="titulo-card">Recursos e Processos Administrativos do Detran</h3>
                     <p class="descricao-card">Atuamos na defesa administrativa contra multas, suspensão e cassação da
                         CNH, elaborando recursos técnicos e estratégicos para preservar seu direito de dirigir.</p>
                 </div>
@@ -153,7 +159,7 @@
                 </div>
             </div>
         </section>
-        <section class="contato flex">
+        <section class="contato flex" id="contato">
             <div class="titulo-secao">
                 <h2>Entre em Contato</h2>
             </div>
@@ -223,16 +229,17 @@
         </section>
     </main>
     <footer class="footer flex">
-        <div class="container">
+        <div class="footer-container">
             <div class="footer-conteudo flex">
-                    <div class="footer-info">
-                        <div class="footer-logo">
-                            <img src="./img/logo-xavier.webp" alt="Logo Escritorio Xavier">
-                        </div>
-                        <p>O Escritório nasce com o propósito de oferecer uma advocacia ética, eficiente e acessível, focada em resultados e na tranquilidade de seus clientes.</p>
+                <div class="footer-info flex">
+                    <div class="footer-logo">
+                        <img src="./img/logo-xavier.webp" alt="Logo Escritorio Xavier">
                     </div>
-                    
-                <div class="footer-info">
+                    <p>O Escritório nasce com o propósito de oferecer uma advocacia ética, eficiente e acessível, focada
+                        em resultados e na tranquilidade de seus clientes.</p>
+                </div>
+
+                <div class="footer-info flex">
                     <h3>Links Rápidos</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -242,25 +249,33 @@
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
-                <div class="footer-info">
+                <div class="footer-info flex">
                     <h3>Áreas de Atuação</h3>
                     <ul>
-                        <li><a href="#home">Direito de Família</a></li>
-                        <li><a href="#sobre">Divórcio</a></li>
-                        <li><a href="#equipe">Revisão de Pensão Alimentícia</a></li>
-                        <li><a href="#atuacoes">Partilha de Bens</a></li>
-                        <li><a href="#contato">Inventário</a></li>
-                        <li><a href="#contato">Direito do Trabalho</a></li>
-                        <li><a href="#contato">Direito Civil</a></li>
+                        <li>Direito de Família</li>
+                        <li>Divórcio</li>
+                        <li>Revisão de Pensão Alimentícia</li>
+                        <li>Partilha de Bens</li>
+                        <li>Inventário</li>
+                        <li>Direito do Trabalho</li>
+                        <li>Direito Civil</li>
                     </ul>
                 </div>
-                <div class="footer-info">
+                <div class="footer-info flex">
                     <h3>Contato</h3>
                     <ul>
-                        <li><strong>WhatsApp:</strong><br><p>(61) 98327-4707</p></li>
-                        <li><strong>E-mail:</strong><br><p>contato@xaviermontalban.com.br</p></li>
-                        <li><strong>Endereço:</strong><br><p>Av. 123 Bloco C Sala 104 Brasília-DF</p></li>
-                        <li><strong>Horário de Atendimento:</strong><br><p>Segunda a Sexta, 8h a 18h</p></li>
+                        <li><strong>WhatsApp:</strong><br>
+                            <p>(61) 98327-4707</p>
+                        </li>
+                        <li><strong>E-mail:</strong><br>
+                            <p>contato@xaviermontalban.com.br</p>
+                        </li>
+                        <li><strong>Endereço:</strong><br>
+                            <p>Av. 123 Bloco C Sala 104 Brasília-DF</p>
+                        </li>
+                        <li><strong>Horário de Atendimento:</strong><br>
+                            <p>Segunda a Sexta, 8h a 18h</p>
+                        </li>
                     </ul>
                 </div>
 
