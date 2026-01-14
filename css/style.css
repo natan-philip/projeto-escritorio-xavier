@@ -21,16 +21,15 @@ html {
 
 body {
     background-color: #172531e6;
-    height: 100% !important;
+    width: 100vw !important;
+    height: 100vh;
     margin: 0 auto;
 }
 
 main {
-    max-width: 1200px;
     min-width: 360px;
     margin: 0 auto;
 }
-
 h1 {
     font-size: clamp(1.9rem, 4vw, 2.4rem);
 }
@@ -75,10 +74,9 @@ header {
     top: 0;
     left: 0;
     z-index: 999;
+    background-color: var(--color-primary-04);
 }
 .header {
-    background-color: var(--color-primary-04);
-    max-width: 1200px;
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
@@ -106,7 +104,6 @@ i {
 
 .nav-menu {
     background-color: var(--color-primary-04);
-    list-style: none;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -153,14 +150,15 @@ i {
     letter-spacing: 1.2px;
     text-transform: uppercase;
     cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 .menu-item:hover {
     background-color: var(--color-primary-03);
-    color: var(--color-primary-04);
-    border-radius: 15px;
-    padding: 07px 100%;
-    transition: background-color 0.4s ease-in;
-
+    
     & a {
         color: var(--color-primary-04);
     }
@@ -201,7 +199,7 @@ i {
 }
 .hero-conteudo {
     flex-direction: column;
-    align-items: center;
+    text-align: left;
     justify-content: center;
     gap: 30px;
 }
@@ -209,17 +207,23 @@ i {
 h1.titulo {
     line-height: 2.5rem;
     color: var(--color-primary-03);
-    text-align: center;
+    text-align: left;
     width: 360px;
 }
-.sub-titulo {
+.descricao-hero {
+    flex-direction: column;
     width: 400px;
     font-size: 1rem;
     font-weight: 500;
     width: 100%;
     color: var(--color-neutral-01);
-    text-align: center;
+    text-align: left;
     line-height: 1.5rem;
+    gap: 15px;
+
+    & strong {
+        color: var(--color-neutral-01);
+    }
 }
 
 .btn {
@@ -247,9 +251,8 @@ h1.titulo {
     align-items: center;
     justify-content: center;
     margin-top: 35px;
-    width: 100%;
+    width: clamp(350px, 40vw, 550px);
     height: auto;
-    padding: 0 3%;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
 
     &:hover {
@@ -290,11 +293,9 @@ h1.titulo {
 .sobre-imagem {
     align-items: center;
     justify-content: center;
-    margin-top: 35px;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
-    width: 100%;
+    width: clamp(350px, 40vw, 550px);
     height: auto;
-    padding: 0 3%;
     
     &:hover {
         transform: scale(1.05);
@@ -516,6 +517,7 @@ h1.titulo {
 .contato-info {
     flex-direction: column;
     padding: 0 5px;
+    margin-bottom: 100px;
     gap: 40px;
 }
 
@@ -663,6 +665,7 @@ textarea {
     & li {
         font-size: 0.9rem;
         text-align: left;
+        font-weight: 500;
         width: 200px;
     }
 }
@@ -718,9 +721,6 @@ textarea {
         width: 100%;
         padding: 40px 4%;
     }
-    .hero-conteudo {
-        width: 500px;
-    }
     .hero-container {
         flex-direction: column-reverse;
         margin: 0 auto;
@@ -730,7 +730,6 @@ textarea {
     }
     .image-escritorio{
         margin: 0 auto;
-        width: 70%;
 
         &:hover {
         transform: scale(1.05);
@@ -742,6 +741,12 @@ textarea {
     }
     .sobre {
         padding-bottom: 60px;
+    }
+    .equipe-conteudo {
+        align-items: normal;
+    }
+    .equipe-conteudo, .btn {
+        width: 100%;
     }
     .grid-container {
         grid-template-columns: 1fr 1fr;
@@ -758,21 +763,25 @@ textarea {
     .nav-menu {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
         position: sticky;
+        gap: 0;
         width: auto;
         padding: 0;
         background-color: transparent;
     }
+    .menu-item {
+        width: auto;
+        padding: 5px 15px;
+    }
     .menu-item:hover {
-    background-color: var(--color-primary-03);
-    color: var(--color-primary-04);
-    border-radius: 15px;
-    padding: 5px 15px;
-    transition: background-color 0.4s ease-in;
-}
+        background-color: var(--color-primary-03);
+        color: var(--color-primary-04);
+    }
     .btn-mobile {
         display: none;
+    }
+    .btn {
+        width: 300px;
     }
     .hero-container, .sobre-container {
     flex-direction: row;
@@ -786,13 +795,11 @@ textarea {
 
         & h1, p {
             text-align: left;
-            width: 100%;
+            width: 500px;
         }
     }
     .image-escritorio {
-        width: 45%;
         padding: 0;
-        margin: 0 auto;
 
         &:hover {
         transform: scale(1.05);
@@ -861,7 +868,6 @@ textarea {
         flex-direction: row;
         gap: 2rem;
         position: sticky;
-        width: ;
         padding: 0;
         background-color: transparent;
     }
@@ -884,7 +890,6 @@ textarea {
     }
     .image-escritorio {
         margin: 0 auto;
-        width: 45%;
 
         &:hover {
         transform: scale(1.05);
@@ -893,7 +898,9 @@ textarea {
     }
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
-        gap: 50px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 50px 30px;
     }
     .contato-conteudo {
         margin: auto;
@@ -902,9 +909,8 @@ textarea {
     .contato-info {
         flex-direction: row;
         align-items: flex-start;
-        justify-content: space-between;
+        gap: 150px;
         margin-top: 80px;
-        gap: 50px;
     }
     .lista-contato, .form-contato {
         margin: 0 auto;
