@@ -1,3 +1,4 @@
+// MENU MOBILE
 const btnMobile = document.querySelector('.btn-mobile');
 const navLinks = document.getElementById('nav-links');
 const icon = document.querySelector('.btn-mobile i');
@@ -19,7 +20,7 @@ const menuClose = document.querySelectorAll('.menu-item');
         })
     })
 
-// SCROLL HEADER / adicionar sombra ao rolar a pagina   //
+// SCROLL HEADER / adicionar sombra ao rolar a pagina
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (!header) return;
@@ -29,3 +30,149 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = 'none';
     }
 });
+
+// SELECIONAR ELEMENTOS DO FORMULÁRIO
+const nome = document.getElementById('nome');
+const sobrenome = document.getElementById('sobrenome');
+const assunto = document.getElementById('assunto');
+const email = document.getElementById('email');
+const mensagem = document.getElementById('mensagem');
+
+// FUNÇÃO PARA VALIDAR EMAIL USANDO REGEX
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// FUNÇÃO PARA MOSTRAR ERRO
+function mostrarErro(input, mensagemErro) {
+    const inputBox = input.parentElement;
+    const spanErro = inputBox.querySelector('.mensagem-error');
+    
+    inputBox.classList.add('error');
+    inputBox.classList.remove('success');
+    spanErro.textContent = mensagemErro;
+}
+
+// FUNÇÃO PARA MOSTRAR SUCESSO
+function mostrarSucesso(input) {
+    const inputBox = input.parentElement;
+    const spanErro = inputBox.querySelector('.mensagem-error');
+    
+    inputBox.classList.add('success');
+    inputBox.classList.remove('error');
+    spanErro.textContent = '';
+}
+
+// FUNÇÃO PARA VALIDAR CAMPO VAZIO
+function validarCampoVazio(input, nomeCampo) {
+    if (input.value.trim() === '') {
+        mostrarErro(input, `Por favor, insira ${nomeCampo}`);
+        return false;
+    } else {
+        mostrarSucesso(input);
+        return true;
+    }
+}
+
+// VALIDAÇÃO EM TEMPO REAL - NOME
+nome.addEventListener('blur', () => {
+    validarCampoVazio(nome, 'seu nome');
+});
+
+nome.addEventListener('input', () => {
+    if (nome.value.trim() !== '') {
+        mostrarSucesso(nome);
+    }
+});
+
+// VALIDAÇÃO EM TEMPO REAL - SOBRENOME
+sobrenome.addEventListener('blur', () => {
+    validarCampoVazio(sobrenome, 'seu sobrenome');
+});
+
+sobrenome.addEventListener('input', () => {
+    if (sobrenome.value.trim() !== '') {
+        mostrarSucesso(sobrenome);
+    }
+});
+
+// VALIDAÇÃO EM TEMPO REAL - ASSUNTO
+assunto.addEventListener('blur', () => {
+    validarCampoVazio(assunto, 'o assunto');
+});
+
+assunto.addEventListener('input', () => {
+    if (assunto.value.trim() !== '') {
+        mostrarSucesso(assunto);
+    }
+});
+
+// VALIDAÇÃO EM TEMPO REAL - EMAIL
+email.addEventListener('blur', () => {
+    if (email.value.trim() === '') {
+        mostrarErro(email, 'Por favor, insira seu e-mail');
+    } else if (!validarEmail(email.value)) {
+        mostrarErro(email, 'Por favor, insira um e-mail válido');
+    }
+});
+
+email.addEventListener('input', () => {
+    if (email.value.trim() !== '' && validarEmail(email.value)) {
+        mostrarSucesso(email);
+    }
+});
+
+// VALIDAÇÃO EM TEMPO REAL - MENSAGEM
+mensagem.addEventListener('blur', () => {
+    if (mensagem.value.trim() === '') {
+        mostrarErro(mensagem, 'Por favor, escreva sua mensagem');
+    } else if (mensagem.value.trim().length < 10) {
+        mostrarErro(mensagem, 'A mensagem deve ter pelo menos 10 caracteres');
+    }
+});
+
+mensagem.addEventListener('input', () => {
+    if (mensagem.value.trim() !== '' && mensagem.value.trim().length >= 10) {
+        mostrarSucesso(mensagem);
+    }
+});
+
+// VALIDAÇÃO NO ENVIO DO FORMULÁRIO
+function validarDadosFormulario() {
+
+    const isNomeValid = validarCampoVazio(nome, 'seu nome');
+    const isSobrenomeValid = validarCampoVazio(sobrenome, 'seu sobrenome');
+    const isAssuntoValid = validarCampoVazio(assunto, 'o assunto');
+    
+    // VALIDAR EMAIL
+    let isEmailValid = false;
+    if (email.value.trim() === '') {
+        mostrarErro(email, 'Por favor, insira seu e-mail');
+    } else if (!validarEmail(email.value)) {
+        mostrarErro(email, 'Por favor, insira um e-mail válido');
+    } else {
+        mostrarSucesso(email);
+        isEmailValid = true;
+    }
+    
+    // VALIDAR MENSAGEM
+    let isMensagemValid = false;
+    if (mensagem.value.trim() === '') {
+        mostrarErro(mensagem, 'Por favor, escreva sua mensagem');
+    } else if (mensagem.value.trim().length < 10) {
+        mostrarErro(mensagem, 'A mensagem deve ter pelo menos 10 caracteres');
+    } else {
+        mostrarSucesso(mensagem);
+        isMensagemValid = true;
+    }
+    
+    // SE TODOS OS CAMPOS FOREM VÁLIDOS
+    return (
+        isNomeValid &&
+        isSobrenomeValid &&
+        isAssuntoValid &&
+        isEmailValid &&
+        isMensagemValid
+    );
+}
