@@ -38,10 +38,30 @@ const assunto = document.getElementById('assunto');
 const email = document.getElementById('email');
 const mensagem = document.getElementById('mensagem');
 
-// FUNÇÃO PARA VALIDAR EMAIL USANDO REGEX
+// FUNÇÃO PARA VALIDAR EMAIL
 function validarEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+    // Regex RFC 5322 simplificada + validações rigorosas
+    const regex = /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?@[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+    
+    if (!regex.test(email)) return false;
+    
+    // Validações adicionais
+    if (email.includes('..')) return false; // pontos consecutivos
+    if (email.split('@')[0].length > 64) return false; // parte local muito longa
+    if (email.length > 254) return false; // email muito longo
+    
+    // Extrair domínio
+    const domain = email.split('@')[1].toLowerCase();
+    
+    // Bloquear domínios temporários/descartáveis comuns
+    const blockedDomains = ['tempmail.com', 'throwaway.email', '10minutemail.com', 'guerrillamail.com', 'mailinator.com', 'trashmail.com'];
+    if (blockedDomains.includes(domain)) return false;
+    
+    // Verificar TLD válido (mínimo 2 caracteres)
+    const tld = domain.split('.').pop();
+    if (tld.length < 2) return false;
+    
+    return true;
 }
 
 // FUNÇÃO PARA MOSTRAR ERRO
