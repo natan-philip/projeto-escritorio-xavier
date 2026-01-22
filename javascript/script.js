@@ -22,7 +22,7 @@ const menuClose = document.querySelectorAll('.menu-item');
 
 // SCROLL HEADER / adicionar sombra ao rolar a pagina
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
+    const header = document.querySelector('header');
     if (!header) return;
     if (window.scrollY > 0) {
         header.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.35)';
@@ -195,4 +195,20 @@ function validarDadosFormulario() {
         isEmailValid &&
         isMensagemValid
     );
+}
+
+// FUNÇÃO PARA EXIBIR NOTIFICAÇÃO FLUTUANTE
+function mostrarNotificacao(mensagem, tipo) {
+    const notificacao = document.createElement('div');
+    notificacao.className = `notificacao ${tipo}`;
+    notificacao.innerHTML = `
+        <i class="fa-solid ${tipo === 'sucesso' ? 'fa-circle-check' : 'fa-circle-xmark'}"></i>
+        <p>${mensagem}</p>
+    `;
+    document.body.appendChild(notificacao);
+
+    setTimeout(() => {
+        notificacao.classList.add('hide');
+        setTimeout(() => notificacao.remove(), 300);
+    }, 5000);
 }

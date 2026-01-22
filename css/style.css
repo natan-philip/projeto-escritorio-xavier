@@ -629,6 +629,7 @@ form {
 input, textarea {
     background-color: var(--color-primary-02);
     color: var(--color-neutral-01);
+    font-size: 1.2rem;
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -694,6 +695,68 @@ textarea {
         color: var(--color-primary-04);
         transform: translateY(-3px);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* NOTIFICAÇÃO FLUTUANTE */
+.notificacao {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    animation: slideIn 0.3s ease-out;
+}
+
+.notificacao.sucesso {
+    background-color: #10b981;
+    color: #fff;
+}
+
+.notificacao.erro {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+.notificacao i {
+    font-size: 20px;
+}
+
+.notificacao p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.notificacao.hide {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
     }
 }
 
@@ -840,6 +903,12 @@ a {
     .lista-contato {
         margin: 50px auto 0 auto;
         width: 80%;
+    }
+
+    .notificacao {
+        left: 20px;
+        right: auto;
+        max-width: 400px;
     }
 
     .footer-conteudo {
