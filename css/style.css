@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('scroll.css');
 
 * {
     margin: 0;
@@ -26,6 +27,12 @@ body {
     height: 100vh;
     margin: 0 auto;
     overflow-x: hidden;
+}
+
+section,
+header,
+footer {
+  overflow-x: hidden;
 }
 
 main {
@@ -346,7 +353,7 @@ h1.titulo {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 10px 10px;
     margin-top: 10px;
 }
 
@@ -942,6 +949,7 @@ textarea {
         flex-direction: row;
         justify-content: space-between;
         text-align: unset;
+        letter-spacing: .5px;
     }
 }
 
@@ -1012,7 +1020,7 @@ textarea {
     .sobre-conteudo {
         gap: 0;
         width: 100%;
-        max-width: 550px;
+        max-width: 600px;
     }
 
     .descricao-sobre {
@@ -1087,6 +1095,10 @@ textarea {
     .footer-grid {
         justify-content: flex-end;
         gap: 7rem;
+    }
+
+    .footer-copy p {
+        letter-spacing: .5px;
     }
 }
 
@@ -1172,5 +1184,9 @@ textarea {
 
     .footer-grid {
         gap: 10rem;
+    }
+
+    .footer-copy p {
+        letter-spacing: .5px;
     }
 }

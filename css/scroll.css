@@ -1,0 +1,49 @@
+/* ==========================================
+   ANIMAÇÕES DE SCROLL (PROFISSIONAL)
+   ========================================== */
+
+.fade {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+/* estado final */
+.fade.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0);
+}
+
+/* direções */
+.from-left {
+  transform: translateX(-60px);
+}
+
+.from-right {
+  transform: translateX(60px);
+}
+
+.from-bottom {
+  transform: translateY(60px);
+}
+
+/* segurança mobile */
+@media (max-width: 768px) {
+  .from-left {
+    transform: translateX(-30px);
+  }
+
+  .from-right {
+    transform: translateX(30px);
+  }
+}
+
+/* evita quebra de layout */
+html,
+body {
+  overflow-x: hidden;
+}
