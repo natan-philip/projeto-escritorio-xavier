@@ -26,8 +26,10 @@ window.addEventListener('scroll', () => {
     if (!header) return;
     if (window.scrollY > 0) {
         header.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.35)';
+        header.classList.add('headerscroll');
     } else {
         header.style.boxShadow = 'none';
+        header.classList.remove('headerscroll');
     }
 });
 

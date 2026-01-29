@@ -4,7 +4,7 @@
 
 .fade {
   opacity: 0;
-  filter: blur(6px);
+  filter: blur(10px);
   transform: translateY(0);
   transition: opacity 0.7s ease, transform 0.7s ease;
   transition-delay: var(--delay, 0s);
@@ -40,10 +40,8 @@
   .from-right {
     transform: translateX(30px);
   }
-}
 
-/* evita quebra de layout */
-html,
-body {
-  overflow-x: hidden;
+  .from-bottom {
+    transform: translateY(30px);
+  }
 }

@@ -1,6 +1,6 @@
 const observerOptions = {
   threshold: 0.3,
-  rootMargin: '0px 0px -50px 0px'
+  rootMargin: '0px 0px -10px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -16,7 +16,7 @@ const observer = new IntersectionObserver((entries) => {
    HELPER: STAGGER AUTOMÁTICO POR SEÇÃO
    ========================================== */
 
-function applyStagger(containerSelector, delayStart = 0.1, delayStep = 0.15) {
+function applyStagger(containerSelector, delayStart = 0.1, delayStep = 0.35) {
   const containers = document.querySelectorAll(containerSelector);
 
   containers.forEach(container => {
@@ -44,7 +44,7 @@ applyStagger('.sobre-container');
 applyStagger('.equipe-container');
 
 // ÁREAS (cards)
-applyStagger('.grid-container', 0.1, 0.1);
+applyStagger('.grid-container', 0.1, 0.2);
 
 // CONTATO
 applyStagger('.contato-container');
