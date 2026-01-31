@@ -165,7 +165,6 @@ i {
 .menu-item {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
@@ -181,6 +180,8 @@ i {
 
 .menu-item:hover {
     background-color: var(--color-primary-03);
+    transform: translate(10px, -5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 
     & a {
         color: var(--color-primary-04);
@@ -521,7 +522,7 @@ h1.titulo {
 .card {
     background-color: var(--color-primary-02);
     width: 260px;
-    height: 330px;
+    height: 360px;
     padding: 10px 5%;
     flex-direction: column;
     align-items: center;
@@ -545,7 +546,7 @@ h1.titulo {
 
 .titulo-card {
     color: var(--color-primary-03);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     text-align: center;
     font-weight: 600;
     line-height: 1.4rem;
@@ -557,6 +558,7 @@ h1.titulo {
     color: var(--color-neutral-01);
     text-align: center;
     line-height: 1.2rem;
+    font-size: 1.15rem;
 }
 
 /* SECAO DE CONTATO */
