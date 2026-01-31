@@ -33,7 +33,9 @@ main {
     min-width: 360px;
     margin: 0 auto;
 }
-section, footer {
+
+section,
+footer {
     overflow: hidden;
 }
 
@@ -86,9 +88,10 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 99;
     background-color: transparent;
 }
+
 .headerscroll {
     background: rgba(23, 37, 49, 0.878);
     backdrop-filter: blur(10px);
@@ -141,7 +144,7 @@ i {
 
 .open {
     position: absolute;
-    z-index: 99;
+    z-index: 9999;
     top: 60px;
     left: 0;
     padding-top: 2.5rem;
@@ -184,7 +187,6 @@ i {
 
 .menu-item:hover {
     background-color: var(--color-primary-03);
-    transform: translate(10px, -5px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 
     & a {
@@ -431,28 +433,6 @@ h1.titulo {
 .equipe-conteudo p {
     color: var(--color-neutral-01);
 }
-.equipe .btn {
-    background-color: transparent;
-    border: 2px solid var(--color-primary-03);
-    padding: 0.8rem;
-    margin: 40px auto 10px auto;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    color: var(--color-primary-03);
-
-    &:hover {
-        background-color: var(--color-primary-03);
-        color: var(--color-primary-04);
-        transform: translateY(-3px);
-        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
-    }
-}
 
 .equipe-imagem {
     margin: 30px auto 0 auto;
@@ -654,7 +634,8 @@ form {
     gap: 10px;
 }
 
-input, textarea {
+input,
+textarea {
     background-color: var(--color-primary-02);
     color: var(--color-neutral-01);
     font-size: 1.2rem;
@@ -771,6 +752,7 @@ textarea {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -782,6 +764,7 @@ textarea {
         transform: translateX(0);
         opacity: 1;
     }
+
     to {
         transform: translateX(-100%);
         opacity: 0;
@@ -831,7 +814,7 @@ textarea {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    
+
 }
 
 .footer-info {
@@ -941,11 +924,12 @@ textarea {
 
     .equipe-conteudo {
         align-items: normal;
+        width: 100%;
     }
 
-    .equipe-conteudo,
-    .btn {
-        width: 100%;
+    .grid-equipe {
+        gap: 20px;
+        height: 500px;
     }
 
     .grid-container {
@@ -1144,7 +1128,7 @@ textarea {
     }
 
     .hero-conteudo p {
-            text-align: left;
+        text-align: left;
     }
 
     .equipe-container {

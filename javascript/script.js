@@ -3,22 +3,38 @@ const btnMobile = document.querySelector('.btn-mobile');
 const navLinks = document.getElementById('nav-links');
 const icon = document.querySelector('.btn-mobile i');
 
-    btnMobile.addEventListener('click', () => {
+    btnMobile.addEventListener('click', (event) => {
+        event.stopPropagation();
         navLinks.classList.toggle('open');
         icon.classList.toggle('fa-xmark');
         icon.classList.toggle('fa-bars');
 })
 
-const menuClose = document.querySelectorAll('.menu-item');
+const menuClose = document.querySelectorAll('.menu-item a');
 
     menuClose.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Pegar o ID da seção do href
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            // Fechar menu mobile
             navLinks.classList.remove('open');
-            document.body.style.overflow = 'auto';
-            icon.classList.remove('fa-times');
+            icon.classList.remove('fa-xmark');
             icon.classList.add('fa-bars');
+            document.body.style.overflow = 'auto';
+            
+            // Scroll suave para a seção
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         })
-    })
+        })
 
 // SCROLL HEADER / adicionar sombra ao rolar a pagina
 window.addEventListener('scroll', () => {
