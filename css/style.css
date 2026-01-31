@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 @import url('scroll.css');
 
 * {
@@ -826,13 +826,18 @@ textarea {
     & li {
         font-size: .875rem;
         text-align: left;
-        font-weight: 400;
+        font-weight: 500;
         opacity: 0.8;
     }
 
     a {
         color: var(--color-neutral-01);
+        font-weight: 600;
     }
+}
+.footer-info li:hover a {
+    color: var(--color-primary-03);
+    font-weight: 700;
 }
 
 .footer-info h3 {

@@ -4,24 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="shortcut icon" href="./img/icon/favicon.ico" type="image/x-icon">
     <meta property="og:image" content="https://xavier-montalban.vercel.app/img/imagem-compartilhar.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:title" content="Escritório Xavier & Montalban Advocacia" />
     <meta property="og:description"
-        content="Atuação estratégica em acordos inteligentes ou contencioso firme, tratando cada caso com empatia e responsabilidade." />
+        content="Defendendo seus interesses com soluções jurídicas estratégicas. Xavier & Montalban Advocacia une tradição e inovação para garantir o melhor resultado em seu processo. Entre em contato." />
     <meta name="keywords"
-        content="advogado, advocacia, direito civil, direito trabalhista, Revisão de Pensão Alimentícia, Partilha de Bens, direito de família, Inventário, divórcio, recursos Detran, escritório de advocacia, consultoria jurídica, assessoria legal, defesa jurídica, litígio, mediação, arbitragem, direito empresarial, direito contratual, direito imobiliário, direito do consumidor, advogados em brasilia" />
-    <meta name="description" content="Defendendo seus interesses com soluções jurídicas estratégicas. Xavier & Montalban Advocacia une tradição e inovação para garantir o melhor resultado em seu processo. Entre em contato.">
-
+        content="escritório Xavier e Montalban, advogado, advocacia, direito civil, direito trabalhista, Revisão de Pensão Alimentícia, Partilha de Bens, direito de família, Inventário, divórcio, recursos Detran, escritório de advocacia, consultoria jurídica, assessoria legal, defesa jurídica, litígio, mediação, arbitragem, direito empresarial, direito contratual, direito imobiliário, direito do consumidor, advogados em brasilia" />
+    <meta name="description"
+        content="Defendendo seus interesses com soluções jurídicas estratégicas. Xavier & Montalban Advocacia une tradição e inovação para garantir o melhor resultado em seu processo. Entre em contato.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <title>Escritório Xavier & Montalban Advocacia</title>
 </head>
 
@@ -29,10 +30,10 @@
     <header>
         <div class="container flex">
             <div class="logo">
-                <a href="#hero"><img src="./img/logo-simples.webp" alt="Logo Escritorio Xavier"></a>
+                <a href="#hero"><img src="./img/logo-simples.webp" loading="lazy" alt="Logo Escritorio Xavier"></a>
             </div>
             <nav class="navbar flex">
-                <button class="btn-mobile">
+                <button class="btn-mobile" aria-label="Abrir Menu">
                     <i class="fa-solid fa-bars menu"></i>
                 </button>
                 <ul id="nav-links" class="nav-menu">
@@ -74,8 +75,9 @@
                     <h2 class="titulo-sobre">Sobre o Escritório</h2>
                 </div>
                 <div class="sobre-container flex">
-                    <img class="sobre-imagem fade from-left" src="./img/escritorio-sobre.webp"
-                        alt="imagem do escritorio">
+                    <img class="sobre-imagem fade from-left" src="./img/escritorio-sobre.webp" srcset="./img/escritorio-sobre-sm.webp 450w, 
+                                ./img/escritorio-sobre.webp 800w" sizes="(max-width: 768px) 438px, 
+                               800px" width="438" height="328" loading="lazy" alt="imagem do escritorio sala de atendimento">
                     <div class="sobre-conteudo flex">
                         <h3 class="sobre-titulo fade from-right">O Escritório Xavier & Montalban Advocacia</h3>
                         <div class="descricao-sobre">
@@ -133,14 +135,25 @@
                     <div class="equipe-imagem">
                         <div class="grid-equipe fade from-right">
                             <div class="grid-imagen fade from-left">
-                                <img src="./img/xavier-montalban.webp"
-                                    alt="foto da equipe do escritorio xavier&montalban">
+                                <img src="./img/xavier-montalban.webp" srcset="./img/xavier-montalban-sm.webp 400w, 
+                                            ./img/xavier-montalban.webp 800w" sizes="(max-width: 600px) 350px, 
+                                           (max-width: 1200px) 525px, 
+                                           800px" width="350" height="525" loading="eager" fetchpriority="high"
+                                    alt="foto da equipe do escritorio xavier & montalban">
                             </div>
                             <div class="grid-imagen fade from-bottom">
-                                <img src="./img/adv-xavier.webp" alt="foto da Advogada Xavier">
+                                <img src="./img/adv-xavier.webp" srcset="./img/adv-xavier-sm.webp 400w, 
+                                            ./img/adv-xavier.webp 800w" sizes="(max-width: 600px) 350px, 
+                                           (max-width: 1200px) 525px, 
+                                           800px" width="350" height="525" loading="eager" fetchpriority="high"
+                                    alt="foto da Advogada Xavier">
                             </div>
                             <div class="grid-imagen fade from-bottom">
-                                <img src="./img/adv-montalban.webp" alt="foto do Advogado Montalban">
+                                <img src="./img/adv-montalban.webp" srcset="./img/adv-montalban-sm.webp 400w, 
+                                            ./img/adv-montalban.webp 800w" sizes="(max-width: 600px) 350px, 
+                                           (max-width: 1200px) 525px, 
+                                           800px" width="350" height="525" loading="eager" fetchpriority="high"
+                                    alt="foto do Advogado Montalban">
                             </div>
                         </div>
                     </div>

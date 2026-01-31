@@ -34,7 +34,7 @@ const menuClose = document.querySelectorAll('.menu-item a');
                 });
             }
         })
-        })
+    })
 
 // SCROLL HEADER / adicionar sombra ao rolar a pagina
 window.addEventListener('scroll', () => {
@@ -46,6 +46,30 @@ window.addEventListener('scroll', () => {
     } else {
         header.style.boxShadow = 'none';
         header.classList.remove('headerscroll');
+    }
+});
+
+// SMOOTH SCROLL PARA LOGO E LINKS DO FOOTER
+document.addEventListener('DOMContentLoaded', () => {
+    const footerLinks = document.querySelectorAll('.footer-info a[href^="#"]');
+    const logoLink = document.querySelector('.logo a');
+    
+    footerLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 });
 
