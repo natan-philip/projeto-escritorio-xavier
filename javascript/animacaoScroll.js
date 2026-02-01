@@ -1,30 +1,3 @@
-/* ANIMACÕES PARA O SCROLL SUAVE */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-
-        // Ignora links vazios ou apenas "#"
-        if (href === '#' || href === '') {
-            e.preventDefault();
-            return;
-        }
-
-        const targetElement = document.querySelector(href);
-
-        if (targetElement) {
-            e.preventDefault();
-
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = targetElement.offsetTop - headerHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
 
 /* INTERSECTION OBSERVER PARA ANIMAÇÕES DE SCROLL */
 

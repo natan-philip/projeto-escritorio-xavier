@@ -254,3 +254,37 @@ function mostrarNotificacao(mensagem, tipo) {
         setTimeout(() => notificacao.remove(), 300);
     }, 5000);
 }
+
+// GERENCIADOR DE SCRIPTS DE TERCEIROS
+function carregarScriptsTerceiros() {
+    if (window.scriptsJaCarregados) return;
+    window.scriptsJaCarregados = true;
+
+    // Configuração EmailJS
+    const scriptEmail = document.createElement('script');
+    scriptEmail.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+    scriptEmail.async = true;
+    document.head.appendChild(scriptEmail);
+
+    scriptEmail.onload = () => {
+        // Inicialize com sua chave pública
+        emailjs.init("wZbzT0qomb-sLoKVd");
+    };
+
+    // Configuração Botpress (Chat)
+    const scriptBotpress = document.createElement('script');
+    scriptBotpress.src = "https://cdn.botpress.cloud/webchat/v3.5/inject.js";
+    scriptBotpress.async = true;
+    document.head.appendChild(scriptBotpress);
+
+    scriptBotpress.onload = () => {
+        const configBotpress = document.createElement('script');
+        configBotpress.src = "https://files.bpcontent.cloud/2026/01/29/22/20260129225629-3TID2KYO.js";
+        configBotpress.defer = true;
+        document.head.appendChild(configBotpress);
+    };
+}
+
+// GATILHOS DE EXECUÇÃO
+window.addEventListener('scroll', carregarScriptsTerceiros, { once: true });
+setTimeout(carregarScriptsTerceiros, 3500);

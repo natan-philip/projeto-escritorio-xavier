@@ -32,8 +32,12 @@ if (formulario) {
         };
         
         if (typeof emailjs !== 'undefined') {
+            console.log('EmailJS disponível, enviando...');
+            console.log('Dados do formulário:', formDados);
+            
             emailjs.send(serviceID, templateID, formDados)
-                .then(() => {
+                .then((response) => {
+                    console.log('Sucesso:', response);
                     mostrarNotificacao('Mensagem enviada com sucesso!', 'sucesso');
                     formulario.reset();
                     document.querySelectorAll('.input-box').forEach(inputBox => {
@@ -41,7 +45,9 @@ if (formulario) {
                     });
                 })
                 .catch((error) => {
-                    console.error("Erro ao enviar:", error);
+                    console.error('Erro detalhado:', error);
+                    console.error('Status:', error.status);
+                    console.error('Text:', error.text);
                     mostrarNotificacao('Erro ao enviar mensagem. Tente novamente.', 'erro');
                 })
                 .finally(() => {
@@ -49,6 +55,7 @@ if (formulario) {
                     btnEnviar.innerHTML = 'Enviar Mensagem <i class="fa-solid fa-paper-plane"></i>';
                 });
         } else {
+            console.error('EmailJS não está definido!');
             mostrarNotificacao('Erro: Serviço de e-mail não disponível.', 'erro');
             btnEnviar.disabled = false;
             btnEnviar.innerHTML = 'Enviar Mensagem <i class="fa-solid fa-paper-plane"></i>';
