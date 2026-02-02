@@ -19,6 +19,7 @@
 /* estilos globais */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 40px;
 }
 
 body {
@@ -257,7 +258,7 @@ i {
     z-index: 22;
     opacity: 0.7;
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba(15, 30, 36, 0.259) 30%, #163a4a 100%);
+    background: linear-gradient(to bottom, #0f1e2442 15%, #163a4a 100%);
 }
 
 .hero .container {
@@ -302,6 +303,11 @@ h1.titulo {
     }
 }
 
+.cta-hero {
+    flex-direction: column;
+    gap: 20px;
+}
+
 .btn {
     align-items: center;
     justify-content: center;
@@ -320,6 +326,17 @@ h1.titulo {
     &:hover {
         filter: brightness(0.8);
         transform: translateY(-3px);
+    }
+}
+
+.btn-hero {
+    background-color: transparent;
+    color: var(--color-primary-03);
+    border: 2px solid var(--color-primary-03);
+
+    &:hover {
+        background-color: var(--color-primary-03);
+        color: var(--color-primary-04);
     }
 }
 
@@ -564,7 +581,7 @@ h1.titulo {
     color: var(--color-neutral-01);
     text-align: center;
     line-height: 1.3rem;
-    font-size: 1.15rem;
+    font-size: 1rem;
 }
 
 .cta-atuacoes {
@@ -955,7 +972,7 @@ textarea {
     }
 
     .hero .overlay {
-        background: linear-gradient(to left, #0505058c 0%, #00000066 50%, #163a4a30 100%);
+        background: linear-gradient(to bottom, #0f1e2442 45%, #163a4a 100%);
     }
 
     .hero-container {
@@ -1044,10 +1061,19 @@ textarea {
         display: none;
     }
 
+    .cta-hero {
+        flex-direction: row;
+        gap: 20px;
+    }
+
     .btn {
         width: 300px;
     }
-
+    
+    .btn-hero {
+        width: 250px;
+    }
+    
     .hero {
         background-image: url("../img/bg-desktop.webp");
         padding-bottom: 80px;
@@ -1196,7 +1222,6 @@ textarea {
         display: grid;
         flex-direction: row-reverse;
         grid-template-columns: 1fr 1fr;
-        align-items: center;
         gap: 4rem;
         margin-top: 60px;
         margin-bottom: 4rem;
