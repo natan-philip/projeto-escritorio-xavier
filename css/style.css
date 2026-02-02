@@ -308,6 +308,7 @@ h1.titulo {
     gap: 0.8rem;
     background-color: var(--color-primary-03);
     color: var(--color-primary-04);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     border: none;
     padding: 0.8rem;
     font-size: 1rem;
@@ -319,7 +320,6 @@ h1.titulo {
     &:hover {
         filter: brightness(0.8);
         transform: translateY(-3px);
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     }
 }
 
@@ -508,9 +508,14 @@ h1.titulo {
 
 .atuacoes h2 {
     color: var(--color-primary-04);
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
+.titulo-secao p {
+    color: var(--color-primary-04);
+    font-weight: 600;
+    margin-bottom: 50px;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -522,7 +527,7 @@ h1.titulo {
 
 .card {
     background-color: var(--color-primary-02);
-    width: 280px;
+    width: 340px;
     height: 360px;
     padding: 10px 5%;
     flex-direction: column;
@@ -560,6 +565,20 @@ h1.titulo {
     text-align: center;
     line-height: 1.3rem;
     font-size: 1.15rem;
+}
+
+.cta-atuacoes {
+    background-color: var(--color-primary-02);
+    color: var(--color-neutral-01);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 50px;
+    gap: 20px;
 }
 
 /* SECAO DE CONTATO */
@@ -972,7 +991,7 @@ textarea {
 
     .grid-container {
         grid-template-columns: 1fr 1fr;
-        gap: 30px 50px;
+        gap: 50px 25px;
     }
 
     .form-contato,
@@ -1109,6 +1128,10 @@ textarea {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .card {
+        width: 280px;
+    }
+
     .contato-info {
         flex-direction: row;
         align-items: flex-start;
@@ -1180,10 +1203,14 @@ textarea {
     }
 
     .grid-container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         max-width: 1200px;
         margin: 0 auto;
         gap: 50px 30px;
+    }
+
+    .card {
+        width: 340px;
     }
 
     .contato-conteudo {
